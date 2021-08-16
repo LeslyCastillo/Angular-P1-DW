@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {ServicioImagenesService} from "../servicio-imagenes.service";
 
 @Component({
   selector: 'app-player',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayerComponent implements OnInit {
 
-  constructor() { }
+  title: any = 'Muchas Flores flores'
+  img: any = "flores.png"
+  constructor(private servicioImagenes: ServicioImagenesService){
+  }
 
   ngOnInit(): void {
+    this.servicioImagenes.selecion.subscribe(data =>{
+      this.title = data.data.title
+      this.img = data.data.img
+    })
   }
 
 }
