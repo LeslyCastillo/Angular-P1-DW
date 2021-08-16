@@ -7,6 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommentsComponent implements OnInit {
 
+  comments: any = [
+    {
+      user: "Ing. Juan Pablo",
+      comment: "Excelente!",
+      img: "jp.png",
+    },
+    {
+      user: "Flor",
+      comment: "Me gusta.",
+      img: "flor.jpg",
+    },
+  ]
+
   constructor() { }
 
   ngOnInit(): void {

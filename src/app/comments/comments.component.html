@@ -1,1 +1,17 @@
-<p>comments works!</p>
+<div class="row">
+  <div class="col-md-12 col-6">
+    <div *ngFor="let item of comments" class="card mb-2" style="max-width: 440px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img [src]="'./assets/profile/' + item.img" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{item.user}}</h5>
+            <p class="card-text">{{item.comment}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
